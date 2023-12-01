@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMAGE GALLERY</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-------------- HOME PAGE---------------------->
+        <h3>IMAGE GALLERY</h3>
+        <div class="buttons">
+            <input type="file" id="input" multiple="multiple" accept="image/jpeg , image/png ,image/jpg">
+            <div>
+              <button id="upload" onclick="showimages()">Upload</button>
+              <button id="delete">Deleteall</button>
+            </div>
+        </div>
+
+
+    <!-- DISPLAYING THE IMAGES ON HOME PAGE -->
+         <div id="display"></div>
+
+    <!----- POPUP OF AN IMAGE ------>
+          <div class="popupimage">
+              <span>&times;</span>
+              <img src="" alt="">
+              <div class="footer">
+                  <button id="deletepopupimage">delete</button>
+                  <button id="edit">edit</button>
+                  <h1 id="date"></h1>
+              </div>
+          </div>
+
+    <!----- POPUP FOR EDITING THE IMAGE ----->
+            <div class="popupimage2">
+              <span>&times;</span>
+              <img src="" alt="">
+              <div class="footer">
+                <div>
+                  <button>blur</button>
+                  <button>brightness</button>
+                  <button>contrast</button>
+                  <button>grayscale</button>
+                  <button>huerotate</button>
+                  <button>invert</button>
+                  <button>saturate</button>
+                  <button>shadow</button>
+                </div>
+                <div>
+                  <button id="save">save</button>
+                </div>
+              </div>
+            </div>
+
+          <!-- NO IMAGES TEXT CONTENT -->
+            <div id="no">
+              <h1 id="nopics"></h1>
+            </div>
+
+
+  </div>
+  <script src="scripttt.js"></script>
+</body>
+
+</html>

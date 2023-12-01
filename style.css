@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,900&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,500;1,6..12,500&display=swap');
+
+* {
+    font-family: 'Nunito Sans', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    position: relative;
+    padding: 50px 8%;
+    background: linear-gradient(#00B4D8, #48CAE4, #90E0EF);
+}
+
+.container h3 {
+    font-size: 3rem;
+    color: black;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+input[type=file]::file-selector-button {
+    margin-right: 20px;
+    border: 1px solid black;
+    background: #ADE8F4;
+    color: black;
+    padding: 7px 10px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+}
+
+#upload {
+    border: none;
+    background-color: #ADE8F4;
+    color: black;
+    font-size: 18px;
+    padding: 7px 10px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+#upload:hover {
+    background-color: rgb(10, 114, 130);
+    color: white;
+    font-weight: 600;
+}
+
+#delete {
+    border: none;
+    background-color: #ADE8F4;
+    padding: 7px 10px;
+    cursor: pointer;
+    color: black;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+#delete:hover {
+    background-color: rgb(233, 33, 27);
+    color: #90E0EF;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nopics {
+    margin-top: 120px;
+    left: 50%;
+}
+
+#display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 10px;
+}
+
+#display .image {
+    height: 350px;
+    width: 240px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#display .image img {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    padding: 4px;
+    object-fit: cover;
+    transition: .2s linear;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+}
+
+#display .image:hover img {
+    transform: scale(0.9);
+    border: 1px solid black;
+}
+
+#deleteicon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.popupimage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .9);
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    display: none;
+}
+
+.popupimage span {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 40px;
+    font-weight: bolder;
+    color: fff;
+    cursor: pointer;
+    z-index: inherit;
+    color: white;
+}
+
+.popupimage span:hover {
+    font-size: 50px;
+}
+
+.popupimage img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid white;
+    border-radius: 5px;
+    height: 85vh;
+    object-fit: cover;
+}
+
+.popupimage .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    align-items: center;
+    color: white;
+    text-align: center;
+
+}
+
+#deletepopupimage {
+    font-size: medium;
+    font-weight: 100;
+}
+
+#edit {
+    font-size: medium;
+    font-weight: 700;
+}
+
+#edit:hover {
+    background-color: #00B4D8;
+}
+
+.popupimage .footer button {
+    background-color: #fff;
+    color: black;
+    font-weight: 1000;
+    border: none;
+    padding: 5px 14px;
+    border-radius: 10px;
+}
+
+.popupimage .footer button:hover {
+    background-color: red;
+    color: #fff;
+}
+
+.popupimage .footer h1 {
+    position: relative;
+    font-size: 20px;
+}
+
+#edit {
+    background-color: white;
+    color: black;
+    padding: 4px 19px;
+    border-radius: 7px;
+}
+
+.popupimage2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 1.0);
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    display: none;
+}
+
+.popupimage2 img {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid white;
+    border-radius: 5px;
+    height: 85vh;
+    object-fit: cover;
+}
+
+.popupimage2 span {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 40px;
+    font-weight: bolder;
+    color: fff;
+    cursor: pointer;
+    z-index: inherit;
+    color: white;
+}
+
+.popupimage2 span:hover {
+    font-size: 50px;
+}
+
+.editbuttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.blur {
+    filter: blur(4px);
+}
+
+.brightness {
+    filter: brightness(250%);
+}
+
+.contrast {
+    filter: contrast(180%);
+}
+
+.grayscale {
+    filter: grayscale(100%);
+}
+
+.huerotate {
+    filter: hue-rotate(180deg);
+}
+
+.invert {
+    filter: invert(100%);
+}
+
+.opacity {
+    filter: opacity(50%);
+}
+
+.saturate {
+    filter: saturate(7);
+}
+
+.shadow {
+    filter: drop-shadow(8px 8px 10px green);
+}
+
+.popupimage2 .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.popupimage2 .footer div button {
+    margin: 10px 2px;
+    border: none;
+    color: black;
+    padding: 5px;
+    background-color: #00B4D8;
+    border-radius: 10px;
+}
+
+#save {
+    background-color: green;
+    font-weight: 1000;
+    padding: 10px 25px;
+}
+
+#save:hover {
+    background-color: #00B4D8;
+    font-weight: 1000;
+}
+
+@media(max-width:559px) {
+    .container h3 {
+        font-size: 2rem;
+        color: black;
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+
+    .buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    .buttons div {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: row;
+        margin-top: 10px;
+    }
+
+    .buttons div button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 10px;
+    }
+
+    .buttons input {
+        margin-left: 50px;
+    }
+
+    .popupimage2 .footer div button {
+        margin: 1px 1px;
+        border: none;
+        color: black;
+        padding: 4px;
+    }
+
+    #save {
+        background-color: green;
+        font-weight: 1000;
+        padding: 10px 10px;
+    }
+}
+
+@media (max-width:1000px) {
+    .popupimage .footer h1 {
+        font-size: 15px;
+        font-weight: 100;
+    }
+}
+
+@media(max-width:348px) {
+    .container h3 {
+        font-size: 1.5rem;
+        color: black;
+        margin-bottom: 3rem;
+        text-align: center;
+        font-weight: bolder;
+    }
+
+    #no {
+        font-size: 1rem;
+    }
+}
