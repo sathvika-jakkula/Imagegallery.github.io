@@ -24,6 +24,7 @@ function showimages() {
       }
       for (let i = 0; i < images.length; i++) {
           const image = new FileReader();
+           image.readAsDataURL(images[i]);
           image.addEventListener("load", function (event) {
       /* --------------- IMAGE CREATION  AND APPENDING TO DISPLAY-------------------*/
             const pic = event.target;
@@ -43,7 +44,7 @@ function showimages() {
             count++;
             nopics.innerHTML = "";
           })
-          image.readAsDataURL(images[i]);
+         
       }
       input.value = "";
 }
